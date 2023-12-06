@@ -32,7 +32,7 @@ Dashboard
                         <div class="row align-items-center p-1">
                             <div class="col-lg-11">
                                 <h5 class="font-16">Semua Pelanggan</h5>
-                                <h4 class="text-primary pt-1 mb-0">5000</h4>
+                                <h4 class="text-primary pt-1 mb-0">{{ $jumlahPelanggan }}</h4>
                             </div>
                         </div>
                     </div>
@@ -45,7 +45,7 @@ Dashboard
                         <div class="row align-items-center p-1">
                             <div class="col-lg-11">
                                 <h5 class="font-16">Pelanggan Bulan ini</h5>
-                                <h4 class="text-danger pt-1 mb-0">2,480</h4>
+                                <h4 class="text-danger pt-1 mb-0">{{ $bulanIni }}</h4>
                             </div>
                         </div>
                     </div>
@@ -54,139 +54,78 @@ Dashboard
         </div>
         <!-- end top-Contant -->
 
-
         <div class="row">
-            <div class="col-xl-6">
+            <div class="col-xl-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="mt-0 header-title mb-4">Semua Pelanggan</h4>
+                        <h4 class="mt-0 header-title mb-4">Pelanggan Terbaru</h4>
                         <div class="table-responsive">
                             <table class="table table-hover mb-0">
                                 <thead>
                                     <tr>
                                         <th scope="col">No</th>
                                         <th scope="col">Nama</th>
-                                        <th scope="col">No. Hp</th>
+                                        <th scope="col">Tanggal</th>
+                                        <th scope="col">Jenis</th>
                                         <th scope="col">Alamat</th>
+                                        <th scope="col">No. Hp</th>
+                                        <th scope="col">Ukuran</th>
+                                        <th scope="col">Lensa</th>
+                                        <th scope="col">Frame</th>
+                                        <th scope="col">Harga</th>
+                                        <th scope="col">keterangan</th>
                                     </tr>
                                 </thead>
+
                                 <tbody>
-
-                                    <!-- start 1 -->
-                                    <tr>
-                                        <td>
-                                            <b>1.</b>
-                                        </td>
-                                        <td> <img src="assets/images/users/user-1.jpg" alt="" class="thumb-md rounded-circle mr-2"> Philip Smead</td>
-                                        <td>April, 25</td>
-                                        <td><span class="badge badge-primary">High</span></td>
-                                    </tr>
-                                    <!-- end 1 -->
-
-                                    <!-- start 2 -->
-
-                                    <tr>
-                                        <td>
-                                            <b>2.</b>
-                                        </td>
-                                        <td><img src="assets/images/users/user-2.jpg" alt="" class="thumb-md rounded-circle mr-2"> Brent Shipley</td>
-                                        <td>April, 28</td>
-                                        <td><span class="badge badge-danger">Low</span></td>
-                                    </tr>
-
-                                    <!-- end 2 -->
-
-                                    <!-- start 3 -->
-                                    <tr>
-                                        <td>
-                                            <b>3.</b>
-                                        </td>
-                                        <td><img src="assets/images/users/user-3.jpg" alt="" class="thumb-md rounded-circle mr-2">Kevin Ashley</td>
-                                        <td>June, 12</td>
-                                        <td><span class="badge badge-success">Medium</span></td>
-                                    </tr>
-                                    <!-- end 3 -->
-
-                                    <!-- start 4 -->
-                                    <tr>
-                                        <td>
-                                            <b>4.</b>
-                                        </td>
-                                        <td><img src="assets/images/users/user-4.jpg" alt="" class="thumb-md rounded-circle mr-2">Martin Whitmer</td>
-                                        <td>June, 28</td>
-                                        <td><span class="badge badge-success">Medium</span></td>
-                                    </tr>
-                                    <!-- end 4 -->
-
-                                </tbody>
-                            </table>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="mt-0 header-title mb-4">Semua Pelanggan</h4>
-                        <div class="table-responsive">
-                            <table class="table table-hover mb-0">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">No</th>
-                                        <th scope="col">Nama</th>
-                                        <th scope="col">No. Hp</th>
-                                        <th scope="col">Alamat</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                    <!-- start 1 -->
-                                    <tr>
-                                        <td>
-                                            <b>1.</b>
-                                        </td>
-                                        <td> <img src="assets/images/users/user-1.jpg" alt="" class="thumb-md rounded-circle mr-2"> Philip Smead</td>
-                                        <td>April, 25</td>
-                                        <td><span class="badge badge-primary">High</span></td>
-                                    </tr>
-                                    <!-- end 1 -->
-
-                                    <!-- start 2 -->
-
-                                    <tr>
-                                        <td>
-                                            <b>2.</b>
-                                        </td>
-                                        <td><img src="assets/images/users/user-2.jpg" alt="" class="thumb-md rounded-circle mr-2"> Brent Shipley</td>
-                                        <td>April, 28</td>
-                                        <td><span class="badge badge-danger">Low</span></td>
-                                    </tr>
-
-                                    <!-- end 2 -->
-
-                                    <!-- start 3 -->
-                                    <tr>
-                                        <td>
-                                            <b>3.</b>
-                                        </td>
-                                        <td><img src="assets/images/users/user-3.jpg" alt="" class="thumb-md rounded-circle mr-2">Kevin Ashley</td>
-                                        <td>June, 12</td>
-                                        <td><span class="badge badge-success">Medium</span></td>
-                                    </tr>
-                                    <!-- end 3 -->
-
-                                    <!-- start 4 -->
-                                    <tr>
-                                        <td>
-                                            <b>4.</b>
-                                        </td>
-                                        <td><img src="assets/images/users/user-4.jpg" alt="" class="thumb-md rounded-circle mr-2">Martin Whitmer</td>
-                                        <td>June, 28</td>
-                                        <td><span class="badge badge-success">Medium</span></td>
-                                    </tr>
-                                    <!-- end 4 -->
-
+                                    @php
+                                        $no = 1;
+                                    @endphp
+                                    @foreach ($pelangganTerbaru as $pu => $pelanggan)
+                                    @php
+                                        $harga = $pelanggan->harga;
+                                        $harga = number_format($harga, 0, ',', '.');
+                                    @endphp
+                                        <tr>
+                                            <td>
+                                                <b>{{ $no++ }}</b>
+                                            </td>
+                                            @if (Str::length($pelanggan->nama) > 15)
+                                                <td>
+                                                    {{Str::limit($pelanggan->nama, 15, "...");}}
+                                                </td>
+                                            @else
+                                                <td>{{ $pelanggan->nama }}</td>
+                                            @endif
+                                            <td>{{ date('d-F-Y', strtotime($pelanggan->transaksi_date)) }}</td>
+                                            <td>{{ $pelanggan->jenis_transaksi }}</td>
+                                            <td>
+                                                @if ($pelanggan->alamat == null)
+                                                    -
+                                                @else
+                                                    {{ $pelanggan->alamat }}
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if ($pelanggan->no_hp == null)
+                                                    -
+                                                @else
+                                                    {{ $pelanggan->no_hp }}
+                                                @endif
+                                            </td>
+                                            <td>{{ $pelanggan->ukuran }}</td>
+                                            <td>{{ $pelanggan->lensa }}</td>
+                                            <td>{{ $pelanggan->frame }}</td>
+                                            <td>Rp.{{ $harga }}</td>
+                                            <td>
+                                                @if ($pelanggan->keterangan == null)
+                                                    -
+                                                @else
+                                                    {{ $pelanggan->keterangan }}
+                                                @endif
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

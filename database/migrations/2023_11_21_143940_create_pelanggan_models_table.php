@@ -4,6 +4,9 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+//carbon
+use Carbon\Carbon;
+
 return new class extends Migration
 {
     /**
@@ -13,16 +16,16 @@ return new class extends Migration
     {
         Schema::create('pelanggans', function (Blueprint $table) {
             $table->id();
-            $table->date('transaksi_date');
+            $table->date('transaksi_date')->default(Carbon::now() );
             $table->string('jenis_transaksi');
             $table->string('nama');
-            $table->text('alamat', null);
-            $table->string('no_hp', null);
+            $table->text('alamat')->nullable();
+            $table->string('no_hp')->nullable();
             $table->string('ukuran');
             $table->string('lensa');
             $table->string('frame');
             $table->integer('harga');
-            $table->text('keterangan', null);
+            $table->text('keterangan')->nullable();
 
             $table->softDeletes();
             $table->timestamps();

@@ -35,19 +35,25 @@
                                 <p class="text-muted w-75 mx-auto mb-4 mt-4">Masukkan Username dan Password Anda</p>
                             </div>
 
-                            <form class="form-horizontal mt-4" action="index.html">
-
+                            <form class="form-horizontal mt-4" action="{{ route('loginProses') }}" method="POST">
+                                @csrf
                                 <div class="form-group">
                                     <div class="col-12">
                                         <label for="username">Username</label>
-                                        <input class="form-control" type="text" required="" id="username" placeholder="Username" autocomplete="off">
+                                        <input class="form-control" type="text" id="username" placeholder="Username" name="username" autocomplete="off">
+                                        @error('username')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <div class="col-12">
                                         <label for="password">Password</label>
-                                        <input class="form-control" type="password" required="" id="password" placeholder="Password">
+                                        <input class="form-control" type="password" id="password" name="password" placeholder="Password">
+                                        @error('password')
+                                        <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                                     </div>
                                 </div>
 
@@ -55,8 +61,8 @@
                                     <div class="col-12">
                                         <div class="checkbox checkbox-primary">
                                             <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                                <label class="custom-control-label" for="customCheck1"> Tampilkan Password</label>
+                                                <input type="checkbox" class="custom-control-input" id="showPassword">
+                                                <label class="custom-control-label" for="showPassword"> Tampilkan Password</label>
                                             </div>
                                         </div>
                                     </div>
@@ -65,13 +71,14 @@
                                 <div class="form-group text-center mt-3">
                                     <div class="col-12">
                                         <button class="btn btn-primary btn-block waves-effect waves-light" type="submit">Log In</button>
+                                        {{-- <a href="/dashboard" class="btn btn-primary btn-block waves-effect waves-light">Log In</a> --}}
                                     </div>
                                 </div>
 
                                 <div class="form-group text-center mt-4">
                                     <div class="col-12">
                                         <div class="float-left">
-                                            <a href="pages-recoverpw.html" class="text-muted"><i class="fa fa-lock mr-1"></i> Forgot your password?</a>
+                                            {{-- <a href="pages-recoverpw.html" class="text-muted"><i class="fa fa-lock mr-1"></i> Forgot your password?</a> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -89,7 +96,7 @@
     </div>
 
     <!-- jQuery  -->
-    <script src="assets/js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/metismenu.min.js"></script>
     <script src="assets/js/jquery.slimscroll.js"></script>
@@ -97,8 +104,37 @@
 
     <script src="../plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
 
+    <!-- Sweet-Alert  -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <!-- App js -->
     <script src="assets/js/app.js"></script>
+
+    <!-- sweet alert success-->
+    <script>
+        @if(session('success'))
+            Swal.fire({
+                icon: 'success',
+                title: 'Berhasil',
+                text: '{{ session('success') }}',
+                showConfirmButton: true,
+                timer: 2000
+            })
+        @endif
+    </script>
+
+    <!-- show password-->
+    <script>
+        $(document).ready(function() {
+            $('#showPassword').click(function() {
+                if ($(this).is(':checked')) {
+                    $('#password').attr('type', 'text');
+                } else {
+                    $('#password').attr('type', 'password');
+                }
+            });
+        });
+    </script>
 
 </body>
 
